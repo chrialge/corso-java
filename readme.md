@@ -9,7 +9,7 @@ Come funziona:
 -   noi scriviamo `source code` (alto livello) in file `.java`.
 -   java viene poi compilato ovvero tradotto in codeice macchina.
 -   quando pero compiliamo il codice e specifico per il sistema operativo (Mac, Windows ecc...).
--   java mette a disposizione uno step intermedio
+-   java mette a disposizione uno step intermedio \n
     source code --> compiler --> byte code --> jvm --> machine code
 
 JVM: java virtual machine e contenuto nel JDK.
