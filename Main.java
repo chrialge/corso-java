@@ -1,15 +1,26 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        int x; // dichiaraziobe di una variabile
-        x = 45; // assegnazione della variabile
+        System.out.println("quale il tuo nome? ");
+        String nome = scanner.nextLine();
 
-        int y = 34; // int per i numeri interi
-        String str = "ciao marco"; // string per le stringe
-        double w = 5.14; // double per i numeri decimali
+        System.out.println("quale il tuo cognome? ");
+        String cognome = scanner.nextLine();
 
-        System.out.println(x);
+        System.out.println("Quale la tua eta?");
+        int eta = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Quale la tua citta?");
+        String citta = scanner.nextLine();
+
+        System.out.println("Ciao " + nome + " " + cognome);
+        System.out.println("Hai " + eta + " anni");
+        System.out.println("Vivi a " + citta);
 
     }
 }

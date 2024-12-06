@@ -9,7 +9,7 @@ Come funziona:
 -   noi scriviamo `source code` (alto livello) in file `.java`.
 -   java viene poi compilato ovvero tradotto in codeice macchina.
 -   quando pero compiliamo il codice e specifico per il sistema operativo (Mac, Windows ecc...).
--   java mette a disposizione uno step intermedio \n
+-   java mette a disposizione uno step intermedio
     source code --> compiler --> byte code --> jvm --> machine code
 
 JVM: java virtual machine e contenuto nel JDK.
@@ -70,3 +70,82 @@ public class Main {
 ```
 
 Il nome della variabile e importante dal punto vista di lettura del codice, debbuging e collaborazione con altre persone, e anche da un punto di vista organizzativo.
+In Java esistono diversi tipi di dato che a sua volta sono raggruppati in dati primiti e dati reference
+
+Dati Primitivi:
+
+-   boolean | true : false | 1bit
+-   byte | -128 : 127 | 1byte
+-   short | -32768 : 32767 | 2bytes
+-   int | -2miliardi : 2 miliardi | 4bytes
+-   long | -9quintilioni : 9 quintilioni | 8bytes --> per il long alla fine del numero mettere una `l` o in maiuscola `L`
+
+-   float | numero con 6-7 cifre decimali 5.123456f | 4bytes --> per il float alla fine del numero mettere una `f`
+-   double | numero con 15 cifre decimali 5.12345678901234 | 8bytes
+
+-   char | singolo carattere/lettera/ASCII 'f' | 2bytes
+-   String | sequenza di caratteri "ciao Java" | variabile
+
+Quindi quando dichiari una variabile devi tipizzare il tipo di dato che verra conservato e modificato
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        boolean ilBoolean = true;
+        byte ilBite = -128;
+        short ilShort = -32768;
+        int ilInt = 2_000_000_000;
+        long ilLong = 3_000_000_000_000L;
+
+        float ilFloat = 3.45678f;
+        double ilDouble = 2.12345678901234
+
+        char ilChar = 'f';
+        String laStringa = "ciao Java";
+    }
+}
+
+
+```
+
+Nota: i singoli apici per il char mentre i doppi apici sono per le stringhe
+
+I dati primitivi lo si riconosce che la tipizazzione inizia con la lettera maiuscola mentre le reference no, poi i dati primitivi vengono dati da java mentre le reference dovremmo crearle, le reference hanno attributi e metodi che le primitive non hanno
+
+## Java - user input
+
+```Java
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("quale il tuo nome? ");
+        String nome = scanner.nextLine();
+
+        System.out.println("quale il tuo cognome? ");
+        String cognome = scanner.nextLine();
+
+        System.out.println("Quale la tua eta?");
+        int eta = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Quale la tua citta?");
+        String citta = scanner.nextLine();
+
+        System.out.println("Ciao " + nome + " " + cognome);
+        System.out.println("Hai " + eta + " anni");
+        System.out.println("Vivi a " + citta);
+
+    }
+}
+
+```
+
+si deve prima importare lo scanner importandolo nel file, e raccomandato di scrivere le importazioni all'inizio del file, poi abbiamo creato lo scanner che prendera le rsposte dello user.
