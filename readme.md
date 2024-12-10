@@ -136,6 +136,7 @@ public class Main {
         int eta = scanner.nextInt();
         scanner.nextLine();
 
+
         System.out.println("Quale la tua citta?");
         String citta = scanner.nextLine();
 
@@ -149,3 +150,281 @@ public class Main {
 ```
 
 si deve prima importare lo scanner importandolo nel file, e raccomandato di scrivere le importazioni all'inizio del file, poi abbiamo creato lo scanner che prendera le rsposte dello user.
+
+## Java - operatori aritmetici
+
+operatori aritmetici:
+
+-   `+` --> operatore di somma e di concatenazione;
+-   `-` --> operatore di sottrazione;
+-   `/` --> operatore di divisione;
+-   `*` --> operatore di moltiplicazione;
+-   `%` --> operatore che mi da il resto di una divisione;
+
+shorthand:
+
+-   `+=` --> sommo se stesso con un'altro numero;
+-   `-=` --> sotraggo se stesso con un'altro numero;
+-   `/=` --> divideo se stesso con ul'atro numero;
+-   `*=` --> moltiplica se stesso con un'atro numero;
+-   `%=` --> da ilresto della divisione tra se stesso con l'atro numero;
+
+incremento e decremento:
+
+-   `++` --> incremento di uno;
+-   `--` --> decremento di uno;
+
+mentre per le espressioni aritmetiche come a scuola se vuoi che una operazione vanga prima dell'atra basta racchiuderla in delle parentesi tonde `()` e puoi inglobare con un'atra parentesi ma sempre tonda.
+
+## Java - Math class
+
+-   `Math.abs()` --> riporta il numero in uno positivo;
+-   `Math.min()` --> riporta il numero piu piccolo tra quelli messi nella parentesi;
+-   `Math.max()` --> riporta il numero piu grande tra quelli messi nella parentesi;
+-   `Math.pow()` --> il primo numero messo nelle parentesi e quello che vuoi elevare metre il secondo la potenza, e riportera il numero elevato alla potenza che abbiamo scelto;
+-   `Math.sqrt()` --> il primo numero messo nelle parentesi e quello per cui vuoi fare la radice quadrata e il secondo e la potenza, e riporta la radice quadrata del numero;
+-   `Math.PI` --> riporta il pi greco;
+
+## Java - operatori di comparazione
+
+-   `>` --> il numero di sinistra e maggiore di quello di destra;
+-   `<` --> il numero di sinistra e minore di quello di destra;
+-   `>=` --> il numero di sinistra e uguale/maggiore di quello di destra;
+-   `<=` --> il numero di sinistra e uguale/minore di quello di destra;
+-   `==` --> il valore di sinistra e uguale a quello di destra;
+-   `!=` --> il valore di sinistra e diverso da quello di destra
+
+## Java - operatori logici
+
+-   `AND`/ `&&` --> operatore per cui si devono verificare tutte le condizioni;
+-   `OR`/ `||` --> operatore per cui almeno una delle condizioni deve verificarsi;
+-   `NOT`/ `!` --> operatore per cui non deve verificare la condizione;
+
+## Java - if/else if/else
+
+quando si ha bisogno che un blocco di istruzioni vengano eseguite in determinate condizioni, si utilizzo l' `if`.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        boolean isOnline = true;
+
+        if(isOnline){
+            System.out.printl("e online");
+        }
+
+    }
+}
+
+
+```
+
+Come si vede nel blocco di codice qui sopra se `isOnline` e true svolge il blocco di codice e poi va avanti, se non si verifica la condizione viene saltato e va avanti, ma in caso ci vorremmo mettere la cassistica che se non si verifica la condizione ci sia una di default basta aggiungere l' `else`
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        boolean isOnline = true;
+
+        if(isOnline){
+            System.out.printl("e online");
+        }else{
+            System.out.printl("non e online");
+
+        }
+
+    }
+}
+
+
+```
+
+Nel caso vorremmo piu condizioni basta aggiungere un `else if`. Ed e possibile anche anidare all'interno di un `if` un altro `if`.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int x = 4;
+
+        if(x< 10){
+
+            System.out.printl("il numero e minore di 10");
+
+
+            if(x % 2 == 0){
+                System.out.printl("il numero e pari");
+
+            }else{
+                System.out.printl("il numero e dispari");
+
+            }
+
+        }else if(x < 50){
+
+            System.out.printl("il numero e tra 10 e 50");
+
+        }else{
+            System.out.printl("il numero e troppo grande");
+
+        }
+    }
+}
+
+
+```
+
+## Java - switch
+
+Come per l' `if` switch svolge un blocco di istruzioni in caso si verifica tale condizione, ma rispetto all'altro lo `switch` non puo avere condizioni troppo complicate cioe l'espressioni.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String nome = "Luca";
+
+        switch (nome) {
+            case "Luca":
+                System.out.println("ciao LuCA");
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
+```
+
+## Java - ciclo while/do while
+
+in caso vorremo iterare per un determinate volte ci usano i cicli, per la costruzione di un ciclo serve un `contattore`, `condizione`, `incremento o decvremento` del `contatore`.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // contatore
+        int i = 0;
+
+        // condizione
+        while (i < 5) {
+
+            System.out.println(i);
+
+            // incremento
+            i++;
+        }
+
+    }
+}
+
+
+```
+
+Come si puo vedere il blocco di istruzioni si svolgera fin tanto che la condizione e vera in caso la condizione non si verifica interompe il ciclo e va avanti. Mentre per il `do while` prima si svolge il blocco d'istruzione e poi controlla la condizione.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int c = 0;
+
+        do {
+            System.out.println(c);
+            c++;
+        } while (c < 0);
+    }
+}
+
+```
+
+Come si puo vedere dal codice sopra esegue il blocco di istruzione e poi controlla, in questo caso il blocco di struzione viene eseguito solo una volta ma se avessimo usato il while non avrebbe svolto neanche una volta
+
+## Java - ciclo for
+
+il ciclo for rispetto al while e do while il `contatore`, `condizione` e `incremento/decremento` si dichiara nella parentesi del `for`. Esso puo avere all'interno un ulteriore ciclo `for`.
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 10; i++) {
+
+            System.out.println("riga " + i);
+
+            for (int j = 0; j < 5; j++) {
+                System.out.println("colonna " + j);
+            }
+        }
+
+
+    }
+}
+
+
+```
+
+In caso vuoi interrompere quando avviene una determinata condizione il ciclo si usa `break` mentre se vuoi che salta quel ciclo si usa `continue`.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 10; i++) {
+
+            if (i == 4) {
+                continue;
+            } else if (i == 6) {
+                break;
+            }
+
+            System.out.println("riga " + i);
+
+            for (int j = 0; j < 5; j++) {
+                System.out.println("colonna " + j);
+            }
+        }
+
+    }
+}
+
+
+```
+
+mentre per l'array si usa il ciclo for `enchaned` che in altri linguaggi di programmazione viene chiamato `foreach`.
+
+```Java
+public class es14 {
+
+    public static void main(String[] args) {
+
+        int[] numeri = { 10, 20, 30, 40, 50 };
+
+        for (int numero : numeri) {
+            System.out.println(numero);
+        }
+    }
+}
+
+
+```
