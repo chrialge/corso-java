@@ -414,7 +414,7 @@ public class Main {
 mentre per l'array si usa il ciclo for `enchaned` che in altri linguaggi di programmazione viene chiamato `foreach`.
 
 ```Java
-public class es14 {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -426,5 +426,334 @@ public class es14 {
     }
 }
 
+
+```
+
+## Java - Array
+
+Gli array potremo definire come una collezione di dati, e questi dati tra di loro sono correlati. Gli array di java rispetto agl'altri linguaggi di programmazione ha una dimensione fissa.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] numeri = new int[3];
+
+        numeri[0] = 10;
+        numeri[1] = 20;
+        numeri[2] = 30;
+
+
+    }
+}
+
+```
+
+In questo caso abbiamo prima inizializzato l'array dicendo che ha una lunghezza di tre(Nota bene: anche per gli array devi dichiarare il tipo di dato che ci sara), e poi gli abbiamo assegnato il valore richiamando l'array con l'indice come si puo vedere l'indice inizia da 0 ed essendo una array di lunghezza 3 il suo ultimo indice 2. questi valore possono essere cambiati ma non si puo superare la aumentare la lunghezza delll'array dopo averlo inzializzato.
+
+```Java
+
+public class es15 {
+
+    public static void main(String[] args) {
+
+        int[] numeri = new int[3];
+
+        numeri[0] = 10;
+        numeri[1] = 20;
+        numeri[2] = 30;
+
+        System.out.println(numeri[1]);
+
+        numeri[1] = 100;
+
+        System.out.println(numeri[1]);
+
+        int[] numbers = { 10, 20, 30, 40 };
+
+        System.out.println(numbers[1]);
+
+    }
+}
+
+```
+
+Essi potranno essere iterati per visualizzare il singolo elemento senza ogni volta dichiarare l'indice.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] numeri = { 10, 20, 30, 40, 50 };
+
+        for (int numero : numeri) {
+            System.out.println(numero);
+        }
+    }
+}
+
+```
+
+## Java - Array 2D
+
+Rispetto agl'array normali questi array a sua volta all'interno avra all'interno altri array.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String[][] classi = new String[3][5];
+
+        classi[0][0] = "Marcin";
+        classi[0][1] = "Christian";
+        classi[0][2] = "Enrico";
+        classi[0][3] = "Francesco";
+        classi[0][4] = "Riccardo";
+
+        classi[1][0] = "Paolo";
+        classi[1][1] = "Marco";
+        classi[1][2] = "Lorenzo";
+        classi[1][3] = "Martina";
+        classi[1][4] = "Georgia";
+
+        classi[2][0] = "Ylenia";
+        classi[2][1] = "Sofia";
+        classi[2][2] = "Leonardo";
+        classi[2][3] = "Patrizio";
+        classi[2][4] = "Debora";
+
+        for (int classe = 0; classe < classi.length; classe++) {
+            System.out.println();
+
+            for (String alunno : classi[classe]) {
+                System.out.print(alunno + " ");
+            }
+        }
+
+    }
+}
+
+```
+
+Mentre se vuoi inizializzare un array con gia dentro i dati si fa come qua sotto
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String[][] classi = {
+                { "Marcin", "Christian", "Enrico", "Francesco", "Riccardo" },
+                { "Paolo", "Marco", "Lorenzo", "Martina", "Georgia" },
+                { "Ylenia", "Sofia", "Leonardo", "Patrizio", "Debora" }
+        };
+
+        for (String[] classe: classi) {
+            System.out.println();
+            for (String alunno : classe) {
+                System.out.print(alunno + " ");
+            }
+        }
+
+    }
+}
+
+```
+
+## Java - metodi stringhe
+
+-   `stringa.equals("")` --> metodo che compara la stringa con quello dentro le parentesi e rida un valore boleano(ricordati: e case sensitive);
+-   `stringa.equalsIgnoreCase()` --> metodo che compara la stringa con quello dentro le parentesi e rida un valore boleano ignorando se e maiuscolo o minuscolo;
+-   `stringa.length` --> metodo che rida la lunghezza della stringa;
+-   `stringa.charAt()` --> metodo che rida il carattere alla posizione che mettiamo dentro le parentesi (ricordati: inizia da 0);
+-   `stringa.indexOf()` --> metodo che ritorna l'indice del parametro che si trova dentro la stinga;
+-   `stringa.isEmpty()` --> metodo che controlla se e vuota la stringa ed ritorna un valore booleano;
+-   `stringa.toUpperCase()` --> metodo che ritorna la stringa ma tutto in maiuscolo;
+-   `stringa.toLowerCase()` --> metodo che ritorna la stringa in minuscolo;
+-   `stringa.trim()` --> metodo che toglie gli spazi all'inizio e alla fine;
+-   `stringa.replace(parametro1, parametro2)` --> metodo che con il primo prametro indica quale porzione della stringa deve essere sostituita con il secondo parametro;
+
+## Java - Wrapper Class
+
+le `wrapper class` permettono di utilizzare dati primitivi come reference, cio si puo utilizzare i metodi ai dati primitivi ma verrano lo stesso trattate allo stesso modo di prima, cioe sono piu lente rispetto ai dati primitivi normali.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+        Boolean vero = true;
+        boolean falso = false;
+
+        Character carattere1 = 'a';
+        Character carattere2 = 'b';
+
+        Integer numero1 = 15;
+        int numero = 10;
+
+        Double decimale1 = 3.24;
+        double decimale2 = 7.24;
+
+    }
+}
+
+
+```
+
+## Java - Arraylist
+
+Le `ArrayList` sono array ridimensionabili cioe possono avere lunghezza variabile, ma in compenso accetano solo reference. Ricordati di che esso deve essere importanto nel file `import java.util.ArrayList;`.
+
+Per creare un ArrayList si dicara poi nelle parentesi angolari si mette il tipo di reference si accetta poi si chiam la classe facendo `new ArrayList<reference>()`
+
+```java
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> persone = new ArrayList<String>();
+
+        persone.add("Luca");
+        persone.add("Andrea");
+        persone.add("Martina");
+        persone.add("Marcin");
+        persone.add("Sofia");
+        persone.add("Nicolo");
+
+        persone.set(2, "Paola");
+        persone.remove(0);
+        persone.clear();
+
+        for (int i = 0; i < persone.size(); i++) {
+            System.out.println(persone.get(i));
+
+        }
+
+    }
+}
+
+```
+
+come si vede sopra l'arraylist a i suoi metodi tipo:
+
+-   `.add()` -> questo metodo ti permette di aggiungere record all'interno dell'array, il valore si imette dentro le parentesi;
+-   `.remove()` -> questo metodo ti permette di togliere record all'interno dell'array, l'indice si imette dentro le parentesi;
+-   `.get()` -> questo metodo ti permette di prendere il record dell'array, l'indice si imette dentro le parentesi;
+-   `.clear()` -> questo metodo ti permette di svuoatare l'array;
+
+Queste arraylist a sua volta possono essere racchiuse all'interno da sua volta da un arraylist dichiarandolo nelle parentesi angolari e asua volta dovra dichiare il tipo di arraylist che si crea.
+
+```java
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<ArrayList<String>> classi = new ArrayList();
+
+        ArrayList<String> classe1 = new ArrayList<String>();
+
+        classe1.add("Christian");
+        classe1.add("Stefano");
+        classe1.add("Francesca");
+        classe1.add("Regina");
+        classe1.add("Paolo");
+
+        ArrayList<String> classe2 = new ArrayList<String>();
+
+        classe2.add("Alice");
+        classe2.add("Federica");
+        classe2.add("Lorenzo");
+        classe2.add("Alessandro");
+        classe2.add("Pisa");
+
+        classi.add(classe1);
+        classi.add(classe2);
+
+        for (int i = 0; i < classi.size(); i++) {
+            System.out.println();
+            for (int y = 0; y < classi.get(i).size(); y++) {
+                System.out.print(classi.get(i).get(y) + " ");
+
+            }
+
+        }
+
+    }
+}
+
+```
+
+## Java -Metodi
+
+I Metodo o funzioni sono blocchi di codice che vogliamo richiamare ogni qualvolta che ci serve.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        addizione();
+    }
+
+    static void addizione() {
+        int risultato = 3 + 3;
+        System.err.println(risultato);
+    }
+}
+```
+
+In caso vorremmo passare dei dati al nostro metodo basta che si dichiari nelle parentesi il tipo e il nome di essso, e qundo invoco la funzione basta che li passo dentro le parentesi.
+
+```Java
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        addizione(4, 6);
+    }
+
+    static void addizione(int a, int b) {
+        int risultato = a + b;
+        System.err.println(risultato);
+    }
+}
+
+
+```
+
+E nel caso in cui voglio che la funzione ritorni un valore basta togliere il `void`(funzione che non ritona niente) e mettere il tipo di dato che vuoi che ritorna
+
+```Java
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int risultato = addizione(4, 6);
+
+        System.out.println(risultato);
+    }
+
+    static int addizione(int a, int b) {
+        int risultato = a + b;
+        return risultato;
+    }
+}
 
 ```
